@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Meet Pets</title>
+    <title>Paw Mates</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
@@ -22,6 +22,7 @@
     <script defer src="/__/firebase/8.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/8.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.0/firebase-storage.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 <body id='body' class='bg' style='background:linear-gradient(to left, #faaca8, #EFEFBB);'>
@@ -86,6 +87,7 @@
                             <option value="male">Male</option> 
                             <option value="female">Female</option>
                         </select>
+                        <input type="file" id='file' >
                     </div>
                     <div class="btn hide" id='signUp' onclick='signUp()'>
                         Sign Up
@@ -106,7 +108,10 @@
  <!-- </div> -->
 
 
-
+<script>
+  
+  
+</script>
 
 
 
@@ -460,12 +465,12 @@
                     <div class="row">
                         
                                   <div class="col-lg-6 col-lg-8 text-left">
-                                          <h5>Pet Meet</h5>
+                                          <h5>PAWMATES.CLUB</h5>
                                           <p id="footer-info">
                                                 <a>San Francisco, CA, USA </a>
                                                  <a>+1 (408) 818 0894 </a>
                                                 <a>talalzeini@gmail.com </a>
-                                                <a>Talal Zeini Copyright © 2020 </a>
+                                                <a>Copyright © 2020 PAWMATES.CLUB</a>
                                           </p>
                                   </div>
                                   <div class="col-sm-3 col-lg-2">
@@ -562,6 +567,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
 <script src="../js/init.js"></script>
 <script src="./js/signing.js"></script>
 <script src="./js/modal.js"></script>

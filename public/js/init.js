@@ -10,3 +10,10 @@ var firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
   
+  
+  // var file_selected = false;
+  // function showNoFile() {
+  //     if(!file_selected) { alert('No file selected!'); }else{
+  //       alert('selected'); 
+  //     }
+  // }

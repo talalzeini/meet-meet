@@ -87,6 +87,36 @@ function signUp(){
               gender: gender,
               pet: pet
           });
+                                    var image;
+                                    $("#file").on("change", function(event){
+                                    image = event.target.files[0];
+                                    })
+                                    var filename = image.name
+                                    var storageRef = firebase.storage().ref("/dogImages/" + filename)
+                                    var uploadTask = storageRef.put(image)
+                                    uploadTask.on('state_changed', function(snapshot){
+                                        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                        console.log('Upload is ' + progress + '% done');
+                                                switch (snapshot.state) {
+                                                        case firebase.storage.TaskState.PAUSED:
+                                                        console.log('Upload is paused');
+                                                            break;
+                                                        case firebase.storage.TaskState.RUNNING: 
+                                                        console.log('Upload is running');
+                                                            break;
+                                                }
+                                    }, function(error) {
+                                            }, function() {
+                                            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                                                        console.log('File available at', downloadURL);
+                           
+                                                        var dogsDatabase = db.ref("dogs");
+                                                        var dogFemales = dogsDatabase.child('dogFemales/' + firebase.auth().currentUser.uid)
+                                                        dogFemales.update({
+                                                        imageURL: downloadURL
+                                                        });
+                                    });
+                                    });
         }
       }
   })
@@ -120,9 +150,9 @@ function signIn(){
 
   
 function signOut(){
-  
 firebase.auth().signOut().then(function() {
         displaySignForm()
+        
     }).catch(function(error) {
         displaySignForm()
 });
@@ -147,8 +177,7 @@ if(!user) {
 
 
 
-
-
+console.log("HEYYYYYY MANNNNN")
 
 
 function heartClicked(){
@@ -200,8 +229,28 @@ function sexyFunction(user){
                                                                             if(existsBool == true){
                                                                                     var dogMales = db.ref("dogs/dogMales/" + user);
                                                                                     console.log(dogMales.parent.key)
+                                                                                    var otherRef = firebase.database().ref("dogs/dogFemales")
+                                                                                                    
+                                                                                                    otherRef.on('value',function(snapshot){
+                                                                                                         
+                                                                                                    
+                                                                                                        var i = 0;
+                                                                                                        var randomIndex = Math.floor(Math.random() * snapshot.numChildren());
+                                                                                                        
+                                                                                                    snapshot.forEach(function(childSnapshot) {
+                                                                                                        if (i == randomIndex) {
+                                                                                                        var childData = childSnapshot.val();
+                                                                                                        console.log("talal" + childData.imageURL)
+
+                                                                                                       
+                                                                                                        if(childData.imageURL == null ){ childData.imageURL == "../images/no-picture.png" }
+                                                                                                        document.getElementById('swiped').innerHTML = "<div class='container'> <div class='content'><div class='card'><div class='user'><img class='user' src='" + childData.imageURL  + ".jpg'/><div class='profile'><div class='name' style='color:white;text-transform:capitalize;'>"+childData.petName+"</div><div class='name' style='color:white;text-transform:capitalize;'>"+childData.gender + " " + childData.pet+"</div><div class='local'><i class='fas fa-map-marker-alt'></i><span> 20 miles away</span></div></div></div></div></div></div><div class='tinder--buttons'><button><i class='fa fa-times'></i></button><button onclick='heartClicked()'><i class='fa fa-heart'></i></button></div>"
+                                                                                                        }
+                                                                                                        i++;
+                                                                                                        });
+                                                                                                         
+                                                                                                    });
                                                                                     dogMales.on("value", function(snapshot) {
-                                                                                        console.log(catMales.parent.key)
                                                                                         document.getElementById('activePetName').innerText =  snapshot.val().petName +  "'s Profile"
                                                                                         document.getElementById('petKind').innerText = snapshot.val().pet
                                                                                         document.getElementById('petGender').innerText = snapshot.val().gender
@@ -230,7 +279,7 @@ function sexyFunction(user){
                                                                                                         snapshot.forEach(function(childSnapshot) {
                                                                                                             if (i == randomIndex) {
                                                                                                             var childData = childSnapshot.val();
-                                                                                                            document.getElementById('swiped').innerHTML = "<div class='container'> <div class='content'><div class='card'><div class='user'><img class='user' src='https://static01.nyt.com/images/2020/04/22/science/22VIRUS-PETCATS1/22VIRUS-PETCATS1-mediumSquareAt3X.jpg'/><div class='profile'><div class='name'  style='color:white;text-transform:capitalize;'>"+childData.petName+"</div><div class='name' style='color:white;text-transform:capitalize;'>"+childData.gender + " " + childData.pet+"</div><div class='local'><i class='fas fa-map-marker-alt'></i><span> 20 miles away</span></div></div></div></div></div></div><div class='tinder--buttons'><button><i class='fa fa-times'></i></button><button onclick='heartClicked()'><i class='fa fa-heart'></i></button></div>"
+                                                                                                            document.getElementById('swiped').innerHTML = "<div class='container'> <div class='content'><div class='card'><div class='user'><img class='user' src='../images/no-picture.png'/><div class='profile'><div class='name' style='color:white;text-transform:capitalize;'>"+childData.petName+"</div><div class='name' style='color:white;text-transform:capitalize;'>"+childData.gender + " " + childData.pet+"</div><div class='local'><i class='fas fa-map-marker-alt'></i><span> 20 miles away</span></div></div></div></div></div></div><div class='tinder--buttons'><button><i class='fa fa-times'></i></button><button onclick='heartClicked()'><i class='fa fa-heart'></i></button></div>"
                                                                                                             }
                                                                                                             i++;
                                                                                                           });
