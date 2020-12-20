@@ -1,0 +1,25 @@
+.models{
+    text-align: center;
+}
+.first-model{
+    height:500px;
+    width:320px;
+    display: inline-block;
+}
+
+@media screen and (max-width:710px){
+    .first-model{
+        height:100%;
+        width:100%;
+        display: inline-block;
+        margin:0 auto;
+        text-align: center;
+    }
+    .first-model{
+        margin-right:0px;
+        margin-bottom: 65px;
+    }
+    .middle-model{
+        margin-left:0px;
+    }
+}

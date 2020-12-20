@@ -1,0 +1,28 @@
+#activePetName{
+    text-transform:capitalize;
+}
+#activePetName:hover{
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.bg{
+   background:linear-gradient(to left, #faaca8, #EFEFBB);
+}
+
+
+ .startSwiping{
+    background-color: white;
+    color:black;
+    padding:10px 25px;
+    font-size:15px;
+    border-radius:5px;
+    width:200px;
+    border:2px solid black;
+}
+ .startSwiping:hover{
+    background-color:#eeeeee;
+}
+.name{
+    text-transform:capitalize;
+}

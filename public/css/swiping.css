@@ -1,0 +1,127 @@
+body {
+	background-color: #f5f7fa;
+	margin: 0;
+}
+.container {
+	display: block;
+    border:none;
+}
+.side {
+	min-width: 320px;
+	height: 200px;
+	height: 100%;
+	min-height: 100vh;
+	border-right: 1px solid #e1e1e1;
+}
+.content {
+	width: 100%;
+	display: flex;
+	padding: 20px 0;
+	align-items: center;
+	flex-direction: column;
+}
+.container .card {
+	position: relative;
+	height: 450px;
+    background:transparent;
+    border:none;
+}
+.flex .card {
+    background:transparent;
+	position: relative;
+	height: 450px;
+}
+.content .card .user {
+	width: 350px;
+    background:transparent;
+	height: 450px;
+	object-fit: cover;
+	border-radius:30px;
+}
+.content .card .user .profile {
+	position: absolute;
+	bottom: 0px;
+	left: 20px;
+}
+.content .card .user .name {
+	color: #fff;
+	font-size: 20px;
+}
+.content .card .local {
+	display: flex;
+	align-items: center;
+	padding: 0 0 20px 0;
+}
+.content .card .local i {
+	margin: 5px 0;
+	color: #fff;
+}
+.content .card .local span {
+	color: #fff;
+	padding: 0 10px;
+	text-shadow: 1px 1px 5px #444;
+}
+.content .buttons {
+	margin-top: 10px;
+	display: flex;
+    background:#c44;
+    border-radius:5px;
+    padding:10px 25px;
+	align-items: center;
+}
+.content .buttons .no i {
+	color: #fd2e79;
+	font-size: 33px;
+}
+.content .buttons .star i {
+	color: #2bb1ff;
+	font-size: 22px;
+}
+.content .buttons .heart i {
+	color: #11e298;
+	font-size: 32px;
+}
+.content .buttons .no,
+.content .buttons .star,
+.content .buttons .heart {
+	border:none;
+	cursor:pointer;
+	background-color: #fff;
+	width: 70px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 70px;
+	margin: 4px;
+	transition: 0.2s transform;
+}
+.content .buttons .no:hover,
+.content .buttons .star:hover,
+.content .buttons .heart:hover {
+	transform: scale(1.1);
+}
+.content .buttons .star {
+	width: 60px;
+	height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

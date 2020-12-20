@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Meet Pets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href= "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" /> 
+      <script src= "https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+    <link rel="stylesheet" href="./css/sign.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/images.css">
+    <link rel="stylesheet" href="./css/swiping.css">
+    <link rel="stylesheet" href="./css/tinder-btn.css">
+    <script defer src="/__/firebase/8.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+<body id='body' class='bg' style='background:linear-gradient(to left, #faaca8, #EFEFBB);'>
+
+
+
+
+<!-- <div class='signForm' id=''> 
+            <h1 style='margin-bottom:40px;'>New Meet</h1>
+            <input type="text" placeholder="Pet Name" class='petName hide' id='petName'>
+            <input type="email" placeholder="Email Address" class='signInputs' id='email'>
+            <input type="password" placeholder="Password" class='signInputs' id='password'>
+            <div id='sexuality' class='hide'> 
+                    <select id='pet' name="pet">
+                        <option value="0" selected disabled>Pet</option>
+                        <option value="cat">Cat</option> 
+                        <option value="dog">Dog</option>
+                    </select>
+                    <select id='gender' name="gender">
+                        <option value="0" selected disabled>Gender</option>
+                        <option value="male">Male</option> 
+                        <option value="female">Female</option>
+                    </select>
+             </div>
+            <!-- <p class='incorrectSign hide'>The email or password is incorrect.</p> -->
+            <!-- <button class='signBtn block' id='signIn' onclick='signIn()'>Sign In</button>
+            <button class='signBtn hide' id='signUp' onclick='signUp()'>Sign Up</button> 
+            <button onclick='hideSignInBtn()' id='dont' class='already' >Don't have an account?</button>
+            <button onclick='hideSignUpBtn()' id='have' class='already hide' >Already have an account?</button> -->
+
+
+            <div class='' id='signForm' style='padding: 0 20px;'>
+                <div class="sub-container" style='border-radius:30px;'>
+                  <div class="login-form">
+                    <div class="title">
+                        <i class="fas fa-paw"></i>
+                        PAW MATES
+                    </div>
+                    <div class='mb-4 hide' style='color:#faaca8;font-size:15px; ' id='becomeMember'>
+                        Become a member today!
+                    </div>
+                    <div class='mb-4' style='color:#faaca8;font-size:15px;' id='matchPaw'>
+                        Match with your pawmate today!
+                    </div>
+                    <div class="input-fields">
+                        <input type="text" placeholder="Pet Name" class='input hide' id='petName'>
+                    </div>
+                    <div class="input-fields">
+                        <input type="email" placeholder="Email Address" class='input' id='email'>
+                    </div>
+                    <div class="input-fields">
+                        <input type="password" placeholder="Password" class='input' id='password'>
+                    </div>
+                    <div id='sexuality' class='hide'> 
+                        <select id='pet' name="pet" style='background:transparent; color:#faaca8;border:2px solid #faaca8;width:49%;height:40px;border-radius:5px;'>
+                            <option value="0" selected disabled>Pet</option>
+                            <option value="cat">Cat</option> 
+                            <option value="dog">Dog</option>
+                        </select>
+                        <select id='gender' name="gender" style='background:transparent; color:#faaca8;border:2px solid #faaca8; width:49%;height:40px;border-radius:5px;'>
+                            <option value="0" selected disabled>Gender</option>
+                            <option value="male">Male</option> 
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="btn hide" id='signUp' onclick='signUp()'>
+                        Sign Up
+                    </div>
+                    <div class="btn" id='signIn' onclick='signIn()'>
+                        Sign In
+                    </div>
+                    <div class='mt-4 hide' id='have' style='color:#faaca8;font-size:15px;'>
+                        Member of the club? <a onclick='hideSignUpBtn()' style='color:#faaca8' href='#' >Sign In</a>
+                    </div>
+                    <div class='mt-4' id='dont' style='color:#faaca8;font-size:15px;'>
+                        New to the club? <a onclick='hideSignInBtn()' style='color:#faaca8' href='#' >Sign Up</a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>	
+ <!-- </div> -->
+
+
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+
+<style>
+
+
+
+
+.sub-container {
+    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    padding-bottom:30px;
+    margin: 150px auto 0;
+    display: flex;
+    background: #fff;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.125);
+  }
+  
+
+.sub-container .login-form {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 40px 35px;
+  margin:0 auto;
+  display:block;
+  position: relative;
+}
+
+.sub-container .login-form .title {
+  color: #faaca8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+
+
+.login-form .input {
+  margin: 5px 0 15px;
+  width: 100%;
+  border-radius:5px;
+  color:#faaca8;
+  border:2px solid #faaca8;
+  padding: 8px;
+}
+.login-form .input::placeholder{
+  
+  color:#faaca8;
+
+}
+.login-form .forgot a {
+  color: #6e8d30;
+  font-size: 18px;
+}
+
+.btn {
+  margin-top:20px;
+  width: 50%;
+  background:white;
+  color: #faaca8;
+  border:2px solid #faaca8;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+}
+.btn:hover{
+    background:linear-gradient(to left, #faaca8, #faaca8);
+    color:white
+}
+
+@media screen and (max-width: 500px) {
+  .sub-container {
+    flex-direction: column;
+    max-width: 300px;
+    height: auto;
+    margin-top: 50px;
+  }
+  .sub-container .banner-img {
+    width: 100%;
+    height: 220px;
+  }
+  .sub-container .login-form {
+    width: 100%;
+    padding: 20px 35px 0;
+  }
+  .sub-container .login-form .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .login-form .input {
+    margin-bottom: 10px;
+  }
+
+  .login-form .forgot {
+    margin-bottom: 55px;
+  }
+  .btn {
+    margin-top: 20px;
+    padding: 10px;
+  }
+}
+
+    </style>
+
+
+
+
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+<!-- SIGNED IN SECTION STARTS HERE -->
+
+
+
+<div id='signedInForm' class='hide'>
+
+
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<!-- HEADER SECTION STARTS HERE -->
+<div class='header' style='z-index:3;'>
+
+<!-- FIRST NAVBAR SECTION STARTS HERE -->
+<!-- FIRST NAVBAR SECTION STARTS HERE -->
+<!-- FIRST NAVBAR SECTION STARTS HERE -->
+<!-- FIRST NAVBAR SECTION STARTS HERE -->
+<div class='header-top'>
+            <ul>
+                    <li class='discountHeader'><a style='color:black;' href='https://www.instagram.com/talal/' class='last-day'>FOLLOW OUR DAILY CONTENT ON INSTAGRAM</a>  </li>
+            </ul>
+</div>
+<!-- FIRST NAVBAR SECTION ENDS HERE -->
+<!-- FIRST NAVBAR SECTION ENDS HERE -->
+<!-- FIRST NAVBAR SECTION ENDS HERE -->
+<!-- FIRST NAVBAR SECTION ENDS HERE -->
+
+
+
+
+
+
+
+
+
+
+ 
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<!-- MODAL SECTION STARTS HERE -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 style='text-align:left;'> Profile </h1>
+            <p class='modalPar'>Name <input class='profileInputs' id='petProfileName'/></p>
+            <p class='modalPar'>Pet <input class='profileInputs' id='petKind'/></p>
+            <p class='modalPar'>Sex <input class='profileInputs' id='petGender'/></p>
+            <p style='text-align:left;'>Email <input class='profileInputs' id='accountEmail' /></p>
+            <p style='text-align:left;'>Bio <input class='profileInputs' id='talal'/></p>
+            <button class='saveBtn'>Save</button>
+    </div>
+</div>
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+<!-- MODAL SECTION ENDS HERE -->
+
+
+
+
+
+
+
+
+
+
+ 
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<!-- SECOND NAVBAR SECTION STARTS HERE -->
+<div id='top-top-header'>
+                <div class='logo-header' style='z-index:4;background:transparent;'>
+                        <ul>
+                                <li><a onclick="" style='float:left; margin-left:20px;' id='activePetName'></a></li>
+                        </ul>
+                </div>
+                <div>
+                        <ul>
+                                <li><a href='../html/.html'>Matches</a></li>
+                                <li><a href='../html/.html'>Settings</a></li>
+                                <li class='signOutBtn'><a href='#' onclick='signOut()'>Sign Out</a></li>
+                        </ul>
+                </div>
+</div>
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+<!-- SECOND NAVBAR SECTION ENDS HERE -->
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+<!-- HEADER SECTION ENDS HERE -->
+
+
+
+
+
+
+
+
+
+
+ 
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<!-- HERO SECTION STARTS HERE -->
+<div id="header-hero-container" >
+    <section id="hero">
+            <div class="hero-text">  
+                    <div id='mainPage'>    
+                                <h1 style='color:black;'>Meet your Paw-mates!</h1>
+                                <img class='first-model'  src="./images/dog.png" />  
+                                <button class='startSwiping' onclick="startSwiping()">Start Swiping</button>
+                    </div>
+                    <div id='swiped' class='hide'>
+
+                    </div>
+            </div>
+    </section>
+</div>
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+<!-- HERO SECTION ENDS HERE -->
+
+
+
+
+
+
+
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<!-- FOOTER SECTION STARTS HERE -->
+<footer> 
+    <div  class="p-3 d-{block} m-auto" id="footer-container">
+            <div class="container">
+                <hr>
+                    <div class="row">
+                        
+                                  <div class="col-lg-6 col-lg-8 text-left">
+                                          <h5>Pet Meet</h5>
+                                          <p id="footer-info">
+                                                <a>San Francisco, CA, USA </a>
+                                                 <a>+1 (408) 818 0894 </a>
+                                                <a>talalzeini@gmail.com </a>
+                                                <a>Talal Zeini Copyright © 2020 </a>
+                                          </p>
+                                  </div>
+                                  <div class="col-sm-3 col-lg-2">
+                                           <h5>Useful Links</h5>
+                                           <p id="footer-stuff">
+                                             <a href="#"> Customer Help</a>
+                                            <a href="#"> About Us</a>
+                                            <a href=""> Matches </a> 
+                                            <a href="../html/.html"> Swipe </a>
+                                            <!-- <span>
+                                                <a class='d-inline-block' href="../html/.html"> Guys </a> 
+                                                <a class='d-inline-block' href="../html/.html"> Girls </a> 
+                                                <a class='d-inline-block' href="../html/.html"> Kids </a> 
+                                            </span> -->
+                                           
+                                      </p>
+                                         
+                                  </div>
+                                  
+                                  <div id="footer-stuff" class=" col-sm-3 col-lg-2">
+                                          <h5> Follow Us </h5>
+                                          <p>
+                                                <a href="https://www.instagram.com/talalzeini" target="_blank"> Instagram </a>
+                                                <a href="https://www.twitter.com/talalzeini" target="_blank"> Twitter </a>
+                                                
+                                          </p>
+                                         
+                                  </div>
+                                
+                 
+                    </div>
+            </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+<!-- FOOTER SECTION ENDS HERE -->
+
+
+
+
+
+
+</div>
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+<!-- SIGNED IN SECTION ENDS HERE -->
+   
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+<script src="../js/init.js"></script>
+<script src="./js/signing.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/swipe.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container"> 
+                    <div class='content'> 
+                            <div class="card">
+                                            <div class="user">
+                                                        <img class="user" src="https://static01.nyt.com/images/2020/04/22/science/22VIRUS-PETCATS1/22VIRUS-PETCATS1-mediumSquareAt3X.jpg" alt=""/>
+                                                        <div class="profile">
+                                                                        <div class="name" id='' style='color:white;'></div>
+                                                                        <div class="name hide" id='petKind' style='color:white;'></div>
+                                                                        <div class="name" id='accountEmail' style='color:white;'></div>
+                                                                        <div class="local"><i class="fas fa-map-marker-alt"></i><span>a 20 miles away</span> </div>
+                                                        </div>
+                                            </div>
+                            </div>
+                    </div>
+            </div> -->

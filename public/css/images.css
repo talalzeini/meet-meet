@@ -1,0 +1,42 @@
+.models{
+    text-align: center;
+}
+.first-model{
+    width:100%;
+    display: inline-block;
+    animation: flying 5s linear infinite;
+}
+#activePetName{
+    text-decoration:none;
+}
+#activePetName:hover{
+    text-decoration:underline;
+}
+
+@media screen and (max-width:710px){
+    .first-model{
+        height:100%;
+        width:100%;
+        display: inline-block;
+        margin:0 auto;
+        text-align: center;
+    }
+    .first-model{
+        margin-right:0px;
+    }
+    
+}
+
+
+ @keyframes flying{
+            0% {
+                  transform: rotate(15deg);
+            }
+            50% {
+                  transform: rotate(-5deg);
+            }
+            100% {
+                  transform: rotate(15deg);
+            }
+      }
+      

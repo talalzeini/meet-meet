@@ -1,0 +1,17 @@
+html, body{
+    font-family: "Avenir";
+}
+*{
+    font-family: "Avenir";
+}
+.hide{
+    display:none;
+}
+.block{
+   display:block;
+}
+
+
+
+
+
